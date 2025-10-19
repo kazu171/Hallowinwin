@@ -22,7 +22,7 @@ export default function Home() {
             <WinWinLogo size="lg" className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 animate-bounce drop-shadow-lg" />
           </div>
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4">
-            🎃 ハロウィン仮装大会 2024 🎃
+            🎃 ハロウィン仮装大会 2025 🎃
           </h1>
           <p className="text-sm sm:text-base md:text-lg mb-3 sm:mb-4 md:mb-6 max-w-3xl mx-auto px-2">
             最高の仮装を決めよう！みんなで投票しよう！
