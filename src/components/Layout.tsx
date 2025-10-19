@@ -141,14 +141,14 @@ const Layout = ({ children }: LayoutProps) => {
           <div className="text-center">
             <div className="flex items-center justify-center space-x-2 mb-4 bg-transparent">
               <WinWinLogo size="sm" className="h-6 w-6 drop-shadow-sm" />
-              <span className="text-lg font-semibold">ハロウィン仮装大会 2024</span>
+              <span className="text-lg font-semibold">ハロウィン仮装大会 2025</span>
             </div>
             <p className="text-gray-400 text-sm">
               300人規模のハロウィンイベント - 最高の仮装を決めよう！
             </p>
             <div className="mt-4 flex flex-col sm:flex-row justify-center gap-1 sm:space-x-6 text-sm text-gray-400">
-              <span>🎃 投票期間: 10月31日 18:00 - 22:00</span>
-              <span>👻 結果発表: 10月31日 22:30</span>
+              <span>🎃 投票期間: 10月30日 18:30 - 21:45</span>
+              <span>👻 結果発表: 10月30日 22:00</span>
             </div>
           </div>
         </div>

@@ -33,12 +33,12 @@ export default function Home() {
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-2 sm:p-3 md:p-4">
               <Calendar className="h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8 text-yellow-300 mx-auto mb-1 sm:mb-2" />
               <h3 className="font-semibold mb-1 text-xs sm:text-sm md:text-base">開催日</h3>
-              <p className="text-xs sm:text-sm md:text-base">10/31</p>
+              <p className="text-xs sm:text-sm md:text-base">10/30</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-2 sm:p-3 md:p-4">
               <Clock className="h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8 text-yellow-300 mx-auto mb-1 sm:mb-2" />
               <h3 className="font-semibold mb-1 text-xs sm:text-sm md:text-base">投票時間</h3>
-              <p className="text-xs sm:text-sm md:text-base">18-22時</p>
+              <p className="text-xs sm:text-sm md:text-base">18:30-21:45</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-2 sm:p-3 md:p-4">
               <Users className="h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8 text-yellow-300 mx-auto mb-1 sm:mb-2" />
@@ -47,6 +47,8 @@ export default function Home() {
             </div>
           </div>
 
+          {/* 結果発表案内 */}
+          <div className="text-xs sm:text-sm md:text-base text-white/90 mb-4">結果発表は <span className="font-semibold">22:00</span> を予定しています。</div>
           <div className="flex flex-row items-center justify-center gap-2 sm:gap-3">
             <Link
               to="/contestants"

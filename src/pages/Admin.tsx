@@ -91,8 +91,8 @@ export default function Admin() {
 
   // 投票設定の状態管理
   const [votingSettings, setVotingSettings] = useState({
-    startTime: '2024-10-31T18:00',
-    endTime: '2024-10-31T22:00',
+    startTime: '2025-10-30T18:30',
+    endTime: '2025-10-30T21:45',
     maxVotesPerIP: 1,
     unlimitedVoting: true, // デフォルトで無制限投票
     lastUpdated: null as string | null
