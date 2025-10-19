@@ -1,0 +1,331 @@
+/* ハロウィンテーマのカスタムスタイル */
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ハロウィンアニメーション */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px #ff6b35, 0 0 10px #ff6b35, 0 0 15px #ff6b35;
+  }
+  50% {
+    box-shadow: 0 0 10px #ff6b35, 0 0 20px #ff6b35, 0 0 30px #ff6b35;
+  }
+}
+
+@keyframes spooky-shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+  20%, 40%, 60%, 80% { transform: translateX(2px); }
+}
+
+@keyframes pumpkin-bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* ハロウィンテーマのユーティリティクラス */
+.halloween-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.halloween-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.spooky-shake {
+  animation: spooky-shake 0.5s ease-in-out;
+}
+
+.pumpkin-bounce {
+  animation: pumpkin-bounce 2s infinite;
+}
+
+/* ハロウィンフォント */
+.font-creepster {
+  font-family: 'Creepster', cursive;
+}
+
+.font-nosifer {
+  font-family: 'Nosifer', cursive;
+}
+
+/* ハロウィンカラーグラデーション */
+.bg-halloween-gradient {
+  background: linear-gradient(135deg, #ff6b35 0%, #6a4c93 50%, #ff6b35 100%);
+}
+
+.bg-halloween-dark {
+  background: linear-gradient(135deg, #2d1b69 0%, #11052c 100%);
+}
+
+/* カスタムボタンスタイル */
+.btn-halloween {
+  @apply bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+}
+
+.btn-halloween:hover {
+  animation: glow 1s ease-in-out;
+}
+
+/* カードホバーエフェクト */
+.card-halloween {
+  @apply bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl;
+}
+
+.card-halloween:hover {
+  box-shadow: 0 20px 40px rgba(255, 107, 53, 0.3);
+}
+
+/* スクロールバーのカスタマイズ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #ff6b35, #6a4c93);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #e55a2b, #5a3f7a);
+}
+
+/* パーティクルエフェクト用 */
+.particle {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.particle-pumpkin {
+  color: #ff6b35;
+  animation: float 4s ease-in-out infinite;
+}
+
+.particle-ghost {
+  color: #ffffff;
+  animation: float 3s ease-in-out infinite reverse;
+}
+
+.particle-bat {
+  color: #2d1b69;
+  animation: float 2s ease-in-out infinite;
+}
+
+/* ローディングスピナー */
+.halloween-spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #ff6b35;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .halloween-float {
+    animation-duration: 2s;
+  }
+  
+  .card-halloween:hover {
+    transform: none;
+    box-shadow: 0 10px 20px rgba(255, 107, 53, 0.2);
+  }
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+  .bg-halloween-gradient {
+    background: linear-gradient(135deg, #e55a2b 0%, #5a3f7a 50%, #e55a2b 100%);
+  }
+}
+
+/* アクセシビリティ */
+@media (prefers-reduced-motion: reduce) {
+  .halloween-float,
+  .halloween-glow,
+  .spooky-shake,
+  .pumpkin-bounce {
+    animation: none;
+  }
+}
+
+/* 投票ボタンの特別エフェクト */
+.vote-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.vote-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.vote-button:hover::before {
+  left: 100%;
+}
+
+/* ハートアニメーション */
+@keyframes heart-beat {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-heart-beat {
+  animation: heart-beat 0.6s ease-in-out;
+}
+
+/* 結果ページの王冠エフェクト */
+.crown-glow {
+  filter: drop-shadow(0 0 10px #ffd700) drop-shadow(0 0 20px #ffd700);
+}
+
+/* トロフィーアニメーション */
+.trophy-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.trophy-shine::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 215, 0, 0.3) 50%, transparent 70%);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+}
+
+/* Toast通知のモバイル対応スタイル */
+.toast-custom {
+  transition: all 0.3s ease;
+}
+
+/* モバイルでのtoast通知スタイル - 右上隅に確実に配置 */
+@media (max-width: 640px) {
+  .toast-custom {
+    font-size: 12px !important;
+    padding: 8px 12px !important;
+    max-width: 240px !important;
+    min-width: 200px !important;
+    margin-right: 0px !important;
+    border-radius: 6px !important;
+  }
+  
+  /* Sonner toasterコンテナのモバイル調整 - 右上隅に配置 */
+  [data-sonner-toaster] {
+    position: fixed !important;
+    right: 8px !important;
+    top: 12px !important;
+    left: auto !important;
+    transform: none !important;
+    z-index: 9999 !important;
+  }
+  
+  [data-sonner-toast] {
+    font-size: 12px !important;
+    padding: 8px 12px !important;
+    max-width: 240px !important;
+    min-width: 200px !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+  }
+  
+  /* 通知リストコンテナも右寄せ */
+  [data-sonner-toaster] ol {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+  }
+}
+
+/* タブレットでの中間サイズ */
+@media (min-width: 641px) and (max-width: 768px) {
+  .toast-custom {
+    font-size: 13px !important;
+    padding: 10px 14px !important;
+    max-width: 280px !important;
+    min-width: 240px !important;
+  }
+}
+
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mobile-first: prevent horizontal scroll globally */
+html, body, #root {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Improve tap target highlight on iOS */
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
